@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Game & Question</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Find Game Page -->
+    <div class="game-container" id="gameContainer">
+        <div class="instruction-text">Click the star! <span id="clickCounter">0</span>/15</div>
+        <div class="game-area" id="gameArea">
+            <div class="clickable-target" id="clickableTarget">⭐</div>
+        </div>
+    </div>
+
+    <!-- Congratulations Page -->
+    <div class="page-container" id="congratsPage" style="display: none;">
+        <h1>Amazing! 🎉</h1>
+        <p>You completed the game!</p>
+        <button class="next-btn" onclick="goToSurvey()">Continue</button>
+    </div>
+
+    <!-- Survey Page -->
+    <div class="page-container" id="surveyPage" style="display: none;">
+        <div id="surveyQuestion1" class="survey-question">
+            <h2>Question 1: Rate the game (1-5)</h2>
+            <div class="rating-options">
+                <label class="rating-option">
+                    <input type="radio" name="rating1" value="1" required>
+                    <span class="rating-circle">1</span>
+                </label>
+                <label class="rating-option">
+                    <input type="radio" name="rating1" value="2" required>
+                    <span class="rating-circle">2</span>
+                </label>
+                <label class="rating-option">
+                    <input type="radio" name="rating1" value="3" required>
+                    <span class="rating-circle">3</span>
+                </label>
+                <label class="rating-option">
+                    <input type="radio" name="rating1" value="4" required>
+                    <span class="rating-circle">4</span>
+                </label>
+                <label class="rating-option">
+                    <input type="radio" name="rating1" value="5" required>
+                    <span class="rating-circle">5</span>
+                </label>
+            </div>
+            <button class="next-btn" onclick="nextSurveyQuestion()">Next</button>
+        </div>
+
+        <div id="surveyQuestion2" class="survey-question" style="display: none;">
+            <h2>Question 2: Did you enjoy the game? (1-5)</h2>
+            <div class="rating-options">
+                <label class="rating-option">
+                    <input type="radio" name="rating2" value="1" required>
+                    <span class="rating-circle">1</span>
+                </label>
+                <label class="rating-option">
+                    <input type="radio" name="rating2" value="2" required>
+                    <span class="rating-circle">2</span>
+                </label>
+                <label class="rating-option">
+                    <input type="radio" name="rating2" value="3" required>
+                    <span class="rating-circle">3</span>
+                </label>
+                <label class="rating-option">
+                    <input type="radio" name="rating2" value="4" required>
+                    <span class="rating-circle">4</span>
+                </label>
+                <label class="rating-option">
+                    <input type="radio" name="rating2" value="5" required>
+                    <span class="rating-circle">5</span>
+                </label>
+            </div>
+            <button class="next-btn" onclick="nextSurveyQuestion()">Next</button>
+        </div>
+
+        <div id="surveyQuestion3" class="survey-question" style="display: none;">
+            <h2>Finally the last question</h2>
+            <button class="next-btn" onclick="goToValentine()">Next</button>
+        </div>
+    </div>
+
+    <!-- Valentine's Question Page -->
+    <div class="card" id="valentineCard" style="display: none;">
+        <div class="question-container" id="questionContainer">
+            <div class="question-text">Will you be my Valentine?</div>
+            <div class="button-container" id="buttonContainer">
+                <button class="response-btn yes-btn" id="yesBtn" onclick="handleYes()">Yes</button>
+                <button class="response-btn no-btn" id="noBtn" onclick="handleNo()">No</button>
+            </div>
+        </div>
+
+        <div class="celebration-container" id="celebrationContainer">
+            <div class="celebration-text">Yippe!!!</div>
+            <img class="celebration-gif" src="celebration.gif" alt="Celebration" />
+            <div class="silly-text" id="sillyText">Made by yours truly</div>
+        </div>
+
+        <div class="response-message" id="responseMessage"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
